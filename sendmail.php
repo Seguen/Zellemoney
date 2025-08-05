@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Inclure PHPMailer
-require 'vendor/autoload.php'; // Si installé via Composer
+require __DIR__ . '/vendor/autoload.php'; // Si installé via Composer
 
 // Ou si tu as téléchargé manuellement PHPMailer :
 /*
@@ -11,6 +11,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 */
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // les champs existent
@@ -33,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $montant    = $_POST['amount'];
         $pseudo     = $_POST['username'];
 
-
         $mail = new PHPMailer(true);
+       
 
         try {
             // Configuration SMTP Gmail
