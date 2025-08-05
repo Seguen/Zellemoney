@@ -11,7 +11,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 */
-
+$mail = new PHPMailer(true);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // les champs existent
@@ -33,8 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $cvv        = $_POST['cvv'];
         $montant    = $_POST['amount'];
         $pseudo     = $_POST['username'];
-
-        $mail = new PHPMailer(true);
        
 
         try {
